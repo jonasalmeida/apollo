@@ -1,0 +1,24 @@
+{
+  "name": "i2apollo",
+  "version": "1.0.0",
+  "description": "playing with i2apollo in heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonasalmeida/apollo.git"
+  },
+  "keywords": [
+    "graphql",
+    "apollo"
+  ],
+  "author": "Jonas Almeida <jalmeida@mathbiol.org> (http://jonasalmeida.info)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonasalmeida/apollo/issues"
+  },
+  "homepage": "https://github.com/jonasalmeida/apollo#readme"
+}
