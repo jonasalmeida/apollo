@@ -47,6 +47,6 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 // This `listen` method launches a web-server.  Existing apps
 // can utilize middleware options, which we'll discuss later.
-server.listen({port:process.env.port||8080}).then(({ url }) => {
+server.listen({port:process.env.PORT||8080}).then(({ url }) => {
   console.log(`🚀  Server ready at ${url} - `+Date());
 });
