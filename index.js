@@ -30,7 +30,7 @@ var settings = {
     "DNT": "1",
     "Origin": "http://localhost:4000",
     "cache-control": "no-cache",
-    "Postman-Token": "4307686e-da28-4465-ab82-5fd74f633129"
+    "Postman-Token": "63d917d7-36d0-41f8-a630-031ad8ef6436"
   },
   "processData": false,
   "data": "{\"query\":\"# Write your query or mutation here\\n{\\n  records(q:\\\"age_group=30 to 49&facility_name=University Hospital\\\")\\n  {\\n    length_of_stay\\n    total_costs\\n  }\\n}\"}"
