@@ -17,7 +17,7 @@ const books = [
 
 // parms
 
-sparc_url='https://health.data.ny.gov/resource/gnzp-ekau.json?'
+sparc_url='https://health.data.ny.gov/resource/gnzp-ekau.json'
 
 // get some SPARCS data
 /*
@@ -54,7 +54,7 @@ const typeDefs = gql`
   type Query {
     books: [Book]
     date: [Date]
-    records: [Record]
+    records(q:String): [Record]
   }
 
   type Record {
@@ -106,8 +106,8 @@ const resolvers = {
       now:Date(),
       hello: "hello at "+Date()
     }],
-    records: () => {
-      return fetch(sparc_url)
+    records: (root,args) => {
+      return fetch(sparc_url+'?'+args.q||'')
       .then(response => response.json());
       //.then(json => console.log(json));
     }
@@ -124,3 +124,19 @@ const server = new ApolloServer({ typeDefs, resolvers });
 server.listen({port:process.env.PORT||4000}).then(({ url }) => {
   console.log(`🚀  Server ready at ${url} - `+Date());
 });
+
+
+/* MIScelaneous notes
+
+querying examples
+
+{
+  records(q:"age_group=70 or Older&facility_name=University Hospital")
+  {
+    total_costs
+    facility_name
+  }
+}
+
+
+*/
