@@ -23,12 +23,12 @@ var settings = {
   "url": "https://i2apollo.herokuapp.com",
   "method": "POST",
   "headers": {
-    "Accept-Encoding": "gzip, deflate, br",
+    //"Accept-Encoding": "gzip, deflate, br",
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "Connection": "keep-alive",
-    "DNT": "1",
-    "Origin": "http://localhost:4000",
+    //"Connection": "keep-alive",
+    //"DNT": "1",
+    //"Origin": "http://localhost:4000",
     "cache-control": "no-cache",
     "Postman-Token": "63d917d7-36d0-41f8-a630-031ad8ef6436"
   },
@@ -37,5 +37,9 @@ var settings = {
 }
 
 $.ajax(settings).done(function (response) {
+    var div=document.getElementById('graphqlApplication')
+    var pre = document.createElement('pre')
+    div.appendChild(pre)
+    pre.innerHTML=JSON.stringify(response,null,3)
   console.log(response);
 });
