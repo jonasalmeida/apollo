@@ -17,7 +17,7 @@ const books = [
 
 // parms
 
-sparc_url='https://health.data.ny.gov/resource/gnzp-ekau.json'
+sparc_url='https://health.data.ny.gov/resource/gnzp-ekau.json?'
 
 // get some SPARCS data
 /*
@@ -107,7 +107,8 @@ const resolvers = {
       hello: "hello at "+Date()
     }],
     records: (root,args) => {
-      return fetch(sparc_url+'?'+args.q||'')
+      args.q=args.q||""
+      return fetch(sparc_url+args.q)
       .then(response => response.json());
       //.then(json => console.log(json));
     }
