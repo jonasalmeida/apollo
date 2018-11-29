@@ -1,6 +1,6 @@
 console.log('index.js loaded')
 
-x =`# Write your query or mutation here
+var q =`# Write your query or mutation here
 {
   records(q:"age_group=70 or Older&facility_name=University Hospital")
   {
@@ -13,9 +13,7 @@ x =`# Write your query or mutation here
   }
 }`
 
-data = JSON.stringify({query:x})
-
-
+data = JSON.stringify({query:q})
 
 fetch("https://i2apollo.herokuapp.com",
   {
