@@ -134,10 +134,16 @@ querying examples
 {
   records(q:"age_group=70 or Older&facility_name=University Hospital")
   {
-    total_costs
     facility_name
+    age_group
+    ccs_diagnosis_description
+    ccs_procedure_description
+    length_of_stay
+    total_costs
   }
 }
+
+
 
 
 */
