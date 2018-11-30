@@ -4,8 +4,12 @@
 <li>Source code: <a href="https://www.github.com/jonasalmeida/apollo" target="_blank">https://www.github.com/jonasalmeida/apollo</a></li>
 <li>QgraphQL endpoint: <a href="https://i2apollo.herokuapp.com" target="_blank">https://i2apollo.herokuapp.com</a></li>
 <li>This application: <a href="https://jonasalmeida.github.io/apollo" target="_blank">https://jonasalmeida.github.io/apollo</a></li>
+<li>Hackathon session: <a href="https://sites.google.com/a/mathbiol.org/i2/2018/2018-11-28-nov" target="_blank">https://sites.google.com/a/mathbiol.org/i2/2018/2018-11-28-nov</a></li>
 </ol>
 <hr>
-<div id="graphqlApplication"></div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<div><input size=80 style="color:blue" id="queryQraphQL" value="age_group=70 or Older&facility_name=University Hospital&$limit=1000"><button style="background-color:yellow" id="plotButton">Query and plot</button></div>
+<div id="graphqlPlot"></div>
+<div id="graphqlTable"></div>
+<div id="graphqlData"></div>
+<script src="plotly-latest.min.js"></script>
 <script src="index.js"></script>
