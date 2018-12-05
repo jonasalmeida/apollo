@@ -32,13 +32,42 @@ funGraphQL = function(){
     var pre = document.createElement('pre')
     div.appendChild(pre)
     pre.innerHTML=JSON.stringify(x,null,3)
-    plotData()
+    plotData(x)
   }))
 }
 
 funGraphQL()
 
 // Plot Data
-plotData=function(){}
+plotData=function(dt){
+  /*
+  var trace1 = {
+    x: [1, 2, 3, 4],
+    y: [10, 15, 13, 17],
+    mode: 'markers',
+    type: 'scatter'
+  };
+  */
+
+  var trace1 = {
+    x: [],
+    y: [],
+    mode: 'markers',
+    type: 'scatter'
+  }
+
+  dt.data.records.forEach(xi=>{
+    trace1.x.push(parseFloat(xi.length_of_stay))
+    trace1.y.push(parseFloat(xi.total_costs))
+
+
+    //debugger
+  })
+
+  Plotly.newPlot('graphqlPlot', [trace1]);
+
+
+  //debugger
+}
 
 plotButton.onclick=funGraphQL
