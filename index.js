@@ -59,12 +59,13 @@ plotData=function(dt){
   dt.data.records.forEach(xi=>{
     trace1.x.push(parseFloat(xi.length_of_stay))
     trace1.y.push(parseFloat(xi.total_costs))
-
-
-    //debugger
   })
 
-  Plotly.newPlot('graphqlPlot', [trace1]);
+  layout={
+    title:'lala'
+  }
+
+  Plotly.newPlot('graphqlPlot', [trace1],layout);
 
 
   //debugger
